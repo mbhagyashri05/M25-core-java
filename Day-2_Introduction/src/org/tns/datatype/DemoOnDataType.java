@@ -1,4 +1,4 @@
-package org.tnsindia.datatype;
+package org.tns.datatype;
 
 public class DemoOnDataType {
 
