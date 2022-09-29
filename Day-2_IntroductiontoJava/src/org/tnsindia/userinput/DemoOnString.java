@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class DemoOnString {
 
 	public static void main(String[] args) {
-		 s= new Scanner (System.in);
+		 Scanner s = new Scanner (System.in);
 		System.out.println("Enter the String: ");
 		//the difference between next() and nextline()
 		/*next will take only first word of your sentence and
