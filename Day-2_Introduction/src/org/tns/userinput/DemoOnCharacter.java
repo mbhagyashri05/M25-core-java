@@ -10,6 +10,7 @@ public class DemoOnCharacter {
 		char x=s.next().charAt(3);
 		System.out.println("The result is: ");
 		System.out.print(x);
+		s.close();
 		// TODO Auto-generated method stub
 
 	}
