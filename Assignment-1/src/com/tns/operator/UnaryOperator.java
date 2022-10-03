@@ -1,0 +1,19 @@
+package com.tns.operator;
+
+public class UnaryOperator {
+
+	public static void main(String[] args) 
+	{
+		int a=5,b=3;
+		int x=a++;//5
+		int y=++b;//4
+		int z=a+x;//6+5=11
+		int x1=a--;
+		int y1=--b;
+		int z1=a-x1;
+		System.out.println(z);
+		System.out.println(z1);
+
+	}
+
+}
