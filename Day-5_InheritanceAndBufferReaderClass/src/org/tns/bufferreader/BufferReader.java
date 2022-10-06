@@ -1,0 +1,18 @@
+package org.tns.bufferreader;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class BufferReader {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader r= new BufferedReader(new InputStreamReader(System.in));
+		String str=r.readLine();
+		System.out.println(str);
+		// TODO Auto-generated method stub
+
+	}
+
+}
