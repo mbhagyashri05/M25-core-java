@@ -7,7 +7,7 @@ public class Factorial
 	//fun definition
 	static int factorial(int n)
 	{
-		int fact=1;
+		int fact=3;
 		for(int i=1;i<=n;i++)
 		{
 			fact=fact*i;
