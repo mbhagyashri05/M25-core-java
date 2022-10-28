@@ -12,7 +12,7 @@ public class Executor {
 		//create email object
 		Email myEmail = new Email();
 		myEmail.setFrom("catch.mbhagyashri05@gmail.com");
-		myEmail.setTo("catch.mbhagyashri59.com");
+		myEmail.setTo("catch.mbhagyashri59@gmail.com");
 		myEmail.setSubject("Java Full Stack");
 		myEmail.setBody("About Training and PLacements");
 		

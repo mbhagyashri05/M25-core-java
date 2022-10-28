@@ -14,8 +14,8 @@ public class Sender
 		}
 		public void sendMessage()
 		{
-			System.out.println("Message Type includes: "+getMessage().getClass());
-			System.out.println("Contents are in the email are: "+getMessage());
+			System.out.println("Message Type includes: "+ getMessage().getClass());
+			System.out.println("Contents are in the email are: "+ getMessage());
 		}
 	
 	
