@@ -15,19 +15,19 @@ public @interface RetentionAnnotationDemo {
 
 		@Override
 		public Class<? extends Annotation> annotationType() {
-			// TODO Auto-generated method stub
+			
 			return null;
 		}
 
 		@Override
 		public String print() {
-			// TODO Auto-generated method stub
+			
 			return null;
 		}
 
 		@Override
 		public String decription() {
-			// TODO Auto-generated method stub
+			
 			return null;
 		}
 		@Override
