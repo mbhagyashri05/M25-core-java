@@ -6,11 +6,11 @@ import org.tns.entities.Student;
 
 public interface StudentService {
 	
-	//ABSTRACT METHOD
-	public boolean AddStudent(Student s);
-	public boolean DeleteStudent(int ROLL_NO);
-	public Student updateStudent(Student s);
-	public Student GetStudent(int ROLL_NO);
+	//abstract method
+	public boolean AddStudent(Student student);
+	public boolean DeleteStudent(int nextInt);
+	public Student updateStudent(Student student);
+	public Student GetStudent(int rollno);
 	public List<Student>GetStudents();
 	
 

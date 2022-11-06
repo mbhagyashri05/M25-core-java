@@ -1,10 +1,11 @@
 package org.tns.repository;
 
-import java.beans.Statement;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import org.tns.dao.StudentDAO;
 import org.tns.entities.Student;
@@ -13,73 +14,95 @@ public class StudentRepositoryImpl implements StudentRepository{
 	
 	StudentDAO dao;
 	
+
 	public StudentRepositoryImpl() {
 		dao=new StudentDAO();
 	}
 
 	@Override
-	public int create(String query, Student s) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int create(String query, Student student) {
+		PreparedStatement statement=createPrepareStatement(query);
+		int count=0;
+		try {
+			statement.setInt(1, student.getRollno());
+			statement.setString(2, student.getName());
+			count=statement.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		return count;
 	}
 
 	@Override
-	public int update(String query, Student s) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int update(String query, Student student) {
+		PreparedStatement statement=createPrepareStatement(query);
+		int count=0;
+		try {
+			statement.setInt(2, student.getRollno());
+			statement.setString(1, student.getName());
+			count=statement.executeUpdate();
+
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		return count;
 	}
+	
 
 	@Override
-	public int delete(String query, Student s) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int delete(String query) {
+		Statement statement=createstatement();
+		int count=0;
+		
+		try {
+			count=statement.executeUpdate(query);
+		} catch (SQLException e) {
+			count=0;
+			//e.printStackTrace();
+		}
+		return count;
 	}
 
 	@Override
 	public ResultSet retrieve(String query) {
-		Statement s=createstatement ();
+		Statement statement=createstatement();
 		ResultSet rs;
 		try {
-			rs=s.executeQuery(query);
-		}
-		catch(SQLException e) 
-		{
+			rs=statement.executeQuery(query);
+		} catch (SQLException e) {
 			rs=null;
-			System.out.println("Exception occured in the statement");
+			//e.printStackTrace();
 		}
-		
-		return s;
+		return rs;
 	}
 
 	@Override
 	public Statement createstatement() {
 		Connection c=dao.createConnection();
-		Statement s;
+		Statement statement;
+		
 		try {
-		s=c.createStatement();
+			statement=c.createStatement();
+		} catch (SQLException e) {
+			statement=null;
+			//e.printStackTrace();
 		}
-		catch(SQLException e) {
-			s=null;
-			System.out.println("Exception occured in statement");
-		}
-		return s;
+		return statement;
 	}
 
 	@Override
 	public PreparedStatement createPrepareStatement(String query) {
-		
 		Connection c=dao.createConnection();
-		PreparedStatement s;
-	
+		PreparedStatement statement;
 		try {
-		s=c.prepareStatement(query);
+			statement=c.prepareStatement(query);
+		} catch (SQLException e) {
+			statement=null;
+			//e.printStackTrace();
 		}
-		catch(SQLException e) {
-			s=null;
-			System.out.println("Exception occured in statement");
-		}
-		return s;
-		
+		return statement;
 	}
 
+	
 }
