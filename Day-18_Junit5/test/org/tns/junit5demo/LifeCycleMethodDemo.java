@@ -3,24 +3,30 @@ package org.tns.junit5demo;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 
-class LifeCycleMethodDemo {
+@TestInstance(Lifecycle.PER_CLASS)
+interface LifeCycleMethodDemo {
 
 	@Test
-	void test() {
-		System.out.println("M-25 batch");
+	default void display()
+	{
+		System.out.println("M25 batch");
 	}
 	@Test
 	@BeforeAll
-	void print() {
-		System.out.println("It executes Before all the testcases");
+	default void print()
+	{
+		System.out.println("BeforeAll annotation executed before all the testcases");
 	}
 	@Test
-	@AfterAll
-	void accept() {
-		System.out.println("It executes After each testcases");
-	}
+	@AfterEach
+	default void accept()
+	{
+		System.out.println("AfterEach annotation executed After each testcases");
 
-}
+	}}

@@ -1,6 +1,6 @@
 package org.tns.junit5demo;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TestLifeCycle implements LifeCycleMethodDemo{
 	
@@ -9,5 +9,6 @@ public class TestLifeCycle implements LifeCycleMethodDemo{
 	{
 		System.out.println("First test case");
 	}
+
 }
 
